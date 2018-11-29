@@ -6,22 +6,22 @@ import matplotlib.pyplot as plt
 
 def fib(n):
     a, b ,x = 1, 1, 1
-    
+    c = []
+    y = []
     while a < n:
-         print(x , b/a,"\n",end='')
          a, b = b, a+b
-         c = b/a
+         c.append(b/a)
          x = x + 1
-    print()
-    return x
-    return c
+         y.append(x) 
+    return y,c
 
-fib(1000000)
 
-fig, ax = plt.subplots()
-ax.plot(x, fib(100))
+
+y1,c1 = fib(10000000)
+ax = plt.subplot()
+ax.plot(y1, c1)
 
 ax.set(xlabel='n ', ylabel='a/b', title='Fibonacci conversion')
 ax.grid()
 
-ax.show()
+plt.show()
