@@ -5,7 +5,7 @@ N = 4096
 # sample spacing
 T = 1.0 / 10000.0
 x = np.linspace(0.0, N*T, N)
-y = np.sin(100.0 * 2.0*np.pi*x) + 0.5*np.sin(180.0 * 2.0*np.pi*x) + 100*np.random.random_sample()
+y = np.sin(100.0 * 2.0*np.pi*x) + 0.5*np.sin(180.0 * 2.0*np.pi*x) + 1*np.random.rand()
 yf = fft(y)
 from scipy.signal import blackman
 w = np.kaiser(N,14)
