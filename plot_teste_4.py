@@ -13,6 +13,7 @@ xf = []
 yf = []
 ywf = []
 ywe = []
+fy_old = []
 
 def gera():
     for i in range(0,N):
@@ -23,7 +24,7 @@ def gera():
 
 
 def gerafft():
-    from scipy.signal import blackman
+    from scipy.signal import hamming
     yf = fft(y)
     w = np.kaiser(N,14)
     # w = np.blackman(N)
@@ -42,6 +43,8 @@ gera()
 xf,yf,ywf = gerafft()
 print(len(xf))
 print(len(yf))
+
+
 plt.subplot(2, 1, 1)
 plt.plot(x[1:N//1],y[1:N//1],color='black', linestyle='solid',linewidth=1)
 # plt.plot(x[1:N//1],yw[1:N//1],color='red', linestyle='solid',linewidth=1)
@@ -52,6 +55,7 @@ plt.semilogy(xf[1:N//2], 2.0/N * np.abs(ywf[1:N//2]), '-r',linewidth=1)
 plt.legend(['FFT', 'FFT w. window'])
 plt.grid()
 plt.draw()
-print(k)
+
 plt.show()
     
+
